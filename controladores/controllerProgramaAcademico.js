@@ -5,30 +5,30 @@ const {
 const db = require('./../modelos/conexionDB');
 // const {default: PQueue} = require('p-queue');
 // const queue = new PQueue({concurrency: 1});
-var sem = require('semaphore')(1);
+// var sem = require('semaphore')(1);
 // 
 
 
  async function controlador(req, res) {
-    sem.take(async function() {
+    // sem.take(async function() {
        
         let body = req.body.numero;
     
         // console.log('Holaaaaaaaaa');
-        console.log(body);
+        // console.log(body);
        
             const[resultado, metadata]= await db.query(`UPDATE programa_academico SET codigo_unidad = ${body} WHERE codigo=70`);
        
         
             const[prog, metadata1]= await db.query(`SELECT * FROM programa_academico WHERE codigo=70`);
     
-            setTimeout(() => {
-            sem.leave();
+            // setTimeout(() => {
+            // sem.leave();
 
 
-                console.log('Primer TimeOut');
+            //     console.log('Primer TimeOut');
                 
-            }, 10000);
+            // }, 10000);
             
       
         
@@ -50,7 +50,7 @@ var sem = require('semaphore')(1);
             // console.log(resultado);
     
         }
-        });
+        // });
 
 }
 

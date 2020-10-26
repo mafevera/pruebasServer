@@ -5,7 +5,7 @@ const {ProgramaAcademico, SemestreAcademico} = require('./../modelos/db');
 // var sem = require('semaphore')(1);
 
 async function controlador(req, res){
-   sem.take(async function() {
+   // sem.take(async function() {
    let body = req.body;
 
    // --------------- verificamos la accion --------------- \\
@@ -39,13 +39,13 @@ async function controlador(req, res){
             });
 
             // const [resultado, metadata] = await db.query('SELECT * FROM programa_academico');
-            setTimeout(() => {
-               sem.leave();
+            // setTimeout(() => {
+            //    sem.leave();
    
    
-                   console.log('second TimeOut');
+            //        console.log('second TimeOut');
                    
-               }, 3000);
+            //    }, 3000);
             if(!resultado){
                return res.status(400).json({
                   status: 400,
@@ -76,7 +76,7 @@ async function controlador(req, res){
          'error': error.message
    });
     }
-    })
+   //  })
    
 
 
