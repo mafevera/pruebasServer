@@ -11,7 +11,6 @@ const async = require('async');
 
 // const rutasWeb = require('./rutas/web');
 // const rutasApi = require('./rutas/api');
-servidor.use( express.static('./public'))
 // middlewares
 servidor.use(bodyParser.urlencoded({extended: true}));
 servidor.use(bodyParser.json());

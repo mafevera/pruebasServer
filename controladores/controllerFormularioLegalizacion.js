@@ -3,10 +3,12 @@
 const {ProgramaAcademico, SemestreAcademico} = require('./../modelos/db');
 // const db = require('./../modelos/conexionDB');
 // var sem = require('semaphore')(1);
+const delay = require('delay');
 
 async function controlador(req, res){
    // sem.take(async function() {
    let body = req.body;
+   delay(10000)
 
    // --------------- verificamos la accion --------------- \\
    try {

@@ -13,6 +13,7 @@ const db = require('./../modelos/conexionDB');
     // sem.take(async function() {
        
         let body = req.body.numero;
+
     
         // console.log('Holaaaaaaaaa');
         // console.log(body);
@@ -29,8 +30,9 @@ const db = require('./../modelos/conexionDB');
             //     console.log('Primer TimeOut');
                 
             // }, 10000);
+const delay = require('delay');
+
             
-      
         
         if (metadata.rowCount===0) {
             return res.status(400).json({
